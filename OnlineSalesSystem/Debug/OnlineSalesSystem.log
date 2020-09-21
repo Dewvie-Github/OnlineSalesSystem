@@ -1,0 +1,7 @@
+﻿  menu.cpp
+  OnlineSales.cpp
+E:\งาน\A_University\C++\OnlineSalesSystem\OnlineSalesSystem\OnlineSales.cpp(11,10): error C2143: syntax error: missing ';' before '*'
+E:\งาน\A_University\C++\OnlineSalesSystem\OnlineSalesSystem\OnlineSales.cpp(11,12): error C2059: syntax error: '<parameter-list>'
+E:\งาน\A_University\C++\OnlineSalesSystem\OnlineSalesSystem\OnlineSales.cpp(13,12): error C2143: syntax error: missing ';' before '{'
+E:\งาน\A_University\C++\OnlineSalesSystem\OnlineSalesSystem\OnlineSales.cpp(13,12): error C2447: '{': missing function header (old-style formal list?)
+  Generating Code...

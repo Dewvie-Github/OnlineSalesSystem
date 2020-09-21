@@ -11,8 +11,9 @@ string surname[99];
 
 
 int main() {
-	cout << " >> Welcome to www.onlinemarketing.co.th <<" << endl << endl;
+	cout << " >> Welcome to www.welcome mabg.co.th <<" << endl << endl;
 	cout << "please select menu" << endl;
+
 	
 	
 	system("pause");
