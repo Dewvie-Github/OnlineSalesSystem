@@ -13,6 +13,7 @@ char menu;
 
 //function declare
 char selectMenu(char &menu);
+string collab();
 
 int main() {
 	cout << " >> Welcome to Online Warehouse Management <<" << endl << endl;
