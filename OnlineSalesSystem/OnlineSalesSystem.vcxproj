@@ -140,9 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="OnlineSales.cpp" />
-    <ClCompile Include="selectMenu.cpp" />
-    <ClCompile Include="table.cpp" />
-    <ClCompile Include="TestCollab.cpp" />
+    <ClCompile Include="showMenu.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

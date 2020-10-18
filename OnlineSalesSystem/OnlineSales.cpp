@@ -1,27 +1,41 @@
 #include<iostream>
+#include<fstream>
 #include<string>
 using namespace std;
 
-// Data Storage
-string name[99];
-string surname[99];
-string productName[99];
+// admin user and password
+string adminUsername = "admin",adminPassword = "1234";
+
+
+// Customer datas
+int customerID[99];
+string customerName[99];
+string customerTel[99];
+string customerEmail[99];
+
+// Warehouse datas
+string productName[99], productClass[99];
+int productType[99], productPrice[99], productQuantity[99];
+
+// Selling system datas
+string checkID;
+
 
 
 bool exitProgram = false;
 char menu;
 
+
 //function declare
-char selectMenu(char &menu);
-string collab();
+char showMenu(char &menu);
 
 int main() {
 	cout << " >> Welcome to Online Warehouse Management <<" << endl << endl;
 	do {
-		selectMenu(menu);
+		showMenu(menu);
 		
 		if (menu == '1') {
-
+			
 		}
 		else if (menu == '2') {
 
@@ -46,8 +60,6 @@ int main() {
 				}
 			} while (check != 'y' && check != 'Y' && check != 'n' && check != 'N');
 			
-			
-
 		}
 		else {
 			cout << ">> Invalid input! Please enter again." << endl;

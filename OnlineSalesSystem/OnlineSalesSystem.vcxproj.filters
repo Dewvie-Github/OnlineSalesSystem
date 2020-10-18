@@ -18,13 +18,7 @@
     <ClCompile Include="OnlineSales.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="table.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="selectMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TestCollab.cpp">
+    <ClCompile Include="showMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
