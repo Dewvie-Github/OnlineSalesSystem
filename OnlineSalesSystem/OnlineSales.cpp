@@ -95,6 +95,23 @@ int main() {
 			
 		}
 		else if (mainMenu == '2') {
+			int i = customerCount;
+			cout << "Product Type";
+			cout << " >> ";
+			cin >> productType[i];
+			cout << "Product Name";
+			cout << " >> ";
+			cin >> productName[i];
+			cout << "Product Price";
+			cout << " >> ";
+			cin >> productPrice[i];
+			cout << "Product Classifier";
+			cout << " >> ";
+			cin >> productClass[i];
+			cout << "Product Quantity";
+			cout << " >> ";
+			cin >> productQuantity[i];
+			customerCount++;
 
 		}
 		else if (mainMenu == '3') {
