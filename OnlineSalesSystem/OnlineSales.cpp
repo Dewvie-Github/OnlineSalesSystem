@@ -1,8 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-#include<cstdlib>
-
 
 
 using namespace std;
@@ -34,9 +32,9 @@ char mainMenu, menu;
 char showMainMenu(char &mainMenu);
 
 
+
 int main() {
-	
-	
+
 	cout << " >> Welcome to Online Warehouse Management <<" << endl << endl;
 	do {
 		showMainMenu(mainMenu);
