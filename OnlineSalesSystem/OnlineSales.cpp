@@ -1,6 +1,7 @@
 #include<iostream>
 #include<fstream>
 #include<string>
+#include<chrono>
 
 
 using namespace std;
@@ -13,6 +14,7 @@ string adminUsername = "admin", adminPassword = "1234";
 int customerCount = 0; //This is for count data(data).
 int customerID[99];
 int idGenerate = 630000;
+int idCount = 0;
 
 string customerName[99][2];
 string customerTel[99];
@@ -20,8 +22,8 @@ string customerEmail[99];
 
 // Warehouse Datas
 string productName[99], productClass[99], productType[99];
-int idCount = 0;
 int productPrice[99], productQuantity[99];
+int productOnwer[99];
 
 // Selling System Datas
 string checkID;
@@ -41,10 +43,11 @@ int main() {
 		showMainMenu(mainMenu);
 		if (mainMenu == '1') {
 			do {
+				// menu
 				cout << "=======================================" << endl;
 				cout << "[ Manage Customer Data ]" << endl;
 				cout << "(1) Register" << endl;
-				cout << "(2) Manage ID" << endl;
+				cout << "(2) Edited ID" << endl;
 				cout << "(3) Show you ID" << endl;
 				cout << "(4) Show all ID. [admin only]" << endl;
 				cout << "(5) Exit to main menu." << endl;
@@ -56,7 +59,7 @@ int main() {
 					cout << endl << "Register..." << endl;
 
 					int i = customerCount;
-					cout << "Enter name surname (Example : Farsang Jangsai) : " << endl;
+					cout << "Enter name surname (Example : Farsang Jangsai)" << endl;
 					cout << " >> ";
 					cin >> customerName[i][0] >> customerName[i][1];
 
@@ -79,23 +82,46 @@ int main() {
 					cout << "-----------------------------------------------------------------" << endl << endl;
 				}
 				else if (menu == '2') {
-					int inputID = 0;
-					cout << "Enter you ID : ";
-					cin >> inputID;
 
-					//Check is ID in data
-					for (int i = 0; i <= idCount; i++) {
-						char manageCustomerMenu = '0';
-						if (inputID == customerID[i]) {
-							;
-							do{
-								
-							} while (manageCustomerMenu != '4');
+					// Check is ID in Data
+					int inputID = 0;
+					int pointer;
+					bool checkIDstatus = false;
+					do {
+						cout << "Enter your ID : ";
+						cin >> inputID;
+						for (int i = 0; i <= customerCount; i++) {
+							if (inputID == customerID[i]) {
+								checkIDstatus = true;
+								pointer = i;
+							}
 						}
-					}
+						if (checkIDstatus != true) cout << "ID not found in data(s). Please enter again." << endl;
+
+					} while (checkIDstatus == false);
+
+					// manage data
+					char manageCustomerdata = '0';
+					do {
+						cout << "Selected what you want to change." << endl
+							<< "(1) Change name and surname." << endl
+							<< "(2) Change Tel." << endl
+							<< "(3) Change Email." << endl
+							<< "(4) Back to Manage Customer Data Menu" << endl;
+
+						if (manageCustomerdata == '1') {
+							cout << "Enter name surname (Example : Farsang Jangsai)" << endl
+								<< " >> ";
+							cin >> customerName[pointer][0] >> customerName[pointer][1];
+						}
+						else if (manageCustomerdata == '2') {
+							cout << "Enter email";
+						}
+
+					} while (manageCustomerdata != '4');
 				}
 				else if (menu == '3') {
-					
+
 				}
 				else if (menu == '4') {
 
@@ -111,26 +137,41 @@ int main() {
 			} while (menu != '5');
 
 
+
 		}
 		else if (mainMenu == '2') {
-			int i = customerCount;
-			cout << "Product Type";
-			cout << " >> ";
-			cin >> productType[i];
-			cout << "Product Name";
-			cout << " >> ";
-			cin >> productName[i];
-			cout << "Product Price";
-			cout << " >> ";
-			cin >> productPrice[i];
-			cout << "Product Classifier";
-			cout << " >> ";
-			cin >> productClass[i];
-			cout << "Product Quantity";
-			cout << " >> ";
-			cin >> productQuantity[i];
-			customerCount++;
+			bool Idstatus = false;
+			int Inputid = 0;
+			do {
 
+				cout << "Login id" << endl;
+				cout << " >> ";
+				cin >> Inputid;
+				for (int i = 0; i <= customerCount; i++) {
+					if (Inputid == customerID[i]) {
+						Idstatus = true;
+						cout << "Product Type" << endl;
+						cout << " >> ";
+						cin >> productType[i];
+						cout << "Product Name" << endl;
+						cout << " >> ";
+						cin >> productName[i];
+						cout << "Product Price" << endl;
+						cout << " >> ";
+						cin >> productPrice[i];
+						cout << "Product Classifier" << endl;
+						cout << " >> ";
+						cin >> productClass[i];
+						cout << "Product Quantity" << endl;
+						cout << " >> ";
+						cin >> productQuantity[i];
+
+					}
+					if (Idstatus != true) {
+						cout << "Enter not found in data(s).Please enter again" << endl;
+					}
+				}
+			} while (Idstatus == false);
 		}
 		else if (mainMenu == '3') {
 
