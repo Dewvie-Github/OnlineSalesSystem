@@ -127,7 +127,6 @@ int main() {
 								<< " >> ";
 							cin >> customerEmail[pointer];
 						}
-						cout << "Hello";
 						cout << "=================================================================" << endl;
 					} while (manageCustomerdata != '4');
 				}
