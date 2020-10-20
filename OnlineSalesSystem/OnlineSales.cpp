@@ -1,7 +1,6 @@
 #include<iostream>
 #include<fstream>
 #include<string>
-#include<chrono>
 
 
 using namespace std;
@@ -23,7 +22,7 @@ string customerEmail[99];
 // Warehouse Datas
 string productName[99], productClass[99], productType[99];
 int productPrice[99], productQuantity[99];
-int productOnwer[99];
+int productOwner[99];
 
 // Selling System Datas
 string checkID;
@@ -33,8 +32,6 @@ char mainMenu, menu;
 
 //function declare
 char showMainMenu(char& mainMenu);
-
-
 
 int main() {
 
@@ -88,7 +85,7 @@ int main() {
 					int pointer;
 					bool checkIDstatus = false;
 					do {
-						cout << "Enter your ID : ";
+						cout << "Enter your ID you want to edit : ";
 						cin >> inputID;
 						for (int i = 0; i <= customerCount; i++) {
 							if (inputID == customerID[i]) {
@@ -103,21 +100,34 @@ int main() {
 					// manage data
 					char manageCustomerdata = '0';
 					do {
+						cout << "-----------------------------------------------------------------" << endl;;
+						cout << "	ID : " << customerID[pointer] << endl;
+						cout << "	Name : " << customerName[pointer][0] << " " << customerName[pointer][1] << endl;
+						cout << "	Tel. " << customerTel[pointer] << " " << "Email : " << customerEmail[pointer] << endl;
+						cout << "-----------------------------------------------------------------" << endl;
 						cout << "Selected what you want to change." << endl
 							<< "(1) Change name and surname." << endl
 							<< "(2) Change Tel." << endl
 							<< "(3) Change Email." << endl
 							<< "(4) Back to Manage Customer Data Menu" << endl;
-
+						cout << "Select menu : ";
+						cin >> manageCustomerdata;
 						if (manageCustomerdata == '1') {
 							cout << "Enter name surname (Example : Farsang Jangsai)" << endl
 								<< " >> ";
 							cin >> customerName[pointer][0] >> customerName[pointer][1];
 						}
 						else if (manageCustomerdata == '2') {
-							cout << "Enter email";
+							cout << "Enter email your Tel." << endl
+								<< " >> ";
+							cin >> customerTel[pointer];
 						}
-
+						else if (manageCustomerdata == '3') {
+							cout << "Enter email your email." << endl
+								<< " >> ";
+							cin >> customerEmail[pointer];
+						}
+						cout << "=================================================================" << endl;
 					} while (manageCustomerdata != '4');
 				}
 				else if (menu == '3') {
